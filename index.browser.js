@@ -32,6 +32,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 let random = bytes => crypto.getRandomValues(new Uint8Array(bytes))
+console.log(`WP-10421 001 random:`)
+console.log(random)
 
 let customRandom = (alphabet, size, getRandom) => {
   // First, a bitmask is necessary to generate the ID. The bitmask makes bytes
@@ -78,6 +80,9 @@ let nanoid = (size = 21) => {
   let id = ''
   let bytes = crypto.getRandomValues(new Uint8Array(size))
 
+  console.log(`WP-10421 002 bytes:`)
+  console.log(bytes)
+  
   // A compact alternative for `for (var i = 0; i < step; i++)`.
   while (size--) {
     // It is incorrect to use bytes exceeding the alphabet size.

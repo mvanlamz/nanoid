@@ -1,4 +1,6 @@
 let random = async bytes => crypto.getRandomValues(new Uint8Array(bytes))
+console.log(`WP-10421 005 random:`)
+console.log(random)
 
 let customAlphabet = (alphabet, size) => {
   // First, a bitmask is necessary to generate the ID. The bitmask makes bytes
@@ -28,6 +30,8 @@ let customAlphabet = (alphabet, size) => {
     let id = ''
     while (true) {
       let bytes = crypto.getRandomValues(new Uint8Array(step))
+      console.log(`WP-10421 006 bytes:`)
+      console.log(bytes)
       // A compact alternative for `for (var i = 0; i < step; i++)`.
       let i = step
       while (i--) {
@@ -43,6 +47,9 @@ let nanoid = async (size = 21) => {
   let id = ''
   let bytes = crypto.getRandomValues(new Uint8Array(size))
 
+  console.log(`WP-10421 007 bytes:`)
+  console.log(bytes)
+  
   // A compact alternative for `for (var i = 0; i < step; i++)`.
   while (size--) {
     // It is incorrect to use bytes exceeding the alphabet size.

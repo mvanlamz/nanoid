@@ -14,9 +14,13 @@ let fillPool = bytes => {
   if (!pool || pool.length < bytes) {
     pool = Buffer.allocUnsafe(bytes * POOL_SIZE_MULTIPLIER)
     crypto.randomFillSync(pool)
+    console.log(`WP-10421 003 pool:`)
+    console.log(pool)
     poolOffset = 0
   } else if (poolOffset + bytes > pool.length) {
     crypto.randomFillSync(pool)
+    console.log(`WP-10421 004 pool:`)
+    console.log(pool)
     poolOffset = 0
   }
   poolOffset += bytes

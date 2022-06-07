@@ -5,6 +5,10 @@
 
 **English** | [Русский](./README.ru.md) | [简体中文](./README.zh-CN.md) | [Bahasa Indonesia](./README.id-ID.md)
 
+---
+For Symon, we are currently on Node v14, and so can only go up to nanoid v3.2.0.
+---
+
 A tiny, secure, URL-friendly, unique string ID generator for JavaScript.
 
 > “An amazing level of senseless perfectionism,

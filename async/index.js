@@ -9,6 +9,7 @@ let random = bytes =>
     // `Buffer.allocUnsafe()` is faster because it doesn’t flush the memory.
     // Memory flushing is unnecessary since the buffer allocation itself resets
     // the memory with the new bytes.
+    console.log(`WP-10421 008`)
     crypto.randomFill(Buffer.allocUnsafe(bytes), (err, buf) => {
       if (err) {
         reject(err)
